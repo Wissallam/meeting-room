@@ -53,20 +53,21 @@ class SettingController extends Controller
             
         ]
     );
-        Meeting::create($request->all());
-        Alert::success('Meeting', 'The meeting has been saved succesefully !');
+        Setting::create($request->all());
+       // $settings=new Setting;
+        Alert::success('Setting', 'The setting has been saved succesefully !');
 
-         return redirect('/meeting');
+         return redirect('/setting');
     }
 
     public function edit($id)
-    {  $meeting=Meeting::find($id);
-       return view('meeting.edit',compact('meeting'));
+    {  $setting=Setting::find($id);
+       return view('setting.edit',compact('setting'));
     }
     
     public function update(Request $request)
     {
-       $meeting=Meeting::find($request->get('id'));
+       $setting=Setting::find($request->get('id'));
        $validation=$request->validate(
         [
             'name'=>'required',
@@ -77,24 +78,24 @@ class SettingController extends Controller
         ]
       
     );
-       $meeting->name=$request->get('name');
-       $meeting->organisation_name=$request->get('organisation_name');
-       $meeting->email_itsupport=$request->get('email_itsupport');
-       $meeting->need_media_team=$request->get('need_media_team');
-       $meeting->need_table_service=$request->get('need_table_service');
-       $meeting->save();
-       Alert::success('Meeting', 'The meeting has been updated succesefully !');
-       return redirect('/meeting')->with('message','Modifié avec succès');
+       $setting->name=$request->get('name');
+       $setting->organisation_name=$request->get('organisation_name');
+       $setting->email_itsupport=$request->get('email_itsupport');
+       $setting->need_media_team=$request->get('need_media_team');
+       $setting->need_table_service=$request->get('need_table_service');
+       $setting->save();
+       Alert::success('Setting', 'The setting has been updated succesefully !');
+       return redirect('/setting')->with('message','Modifié avec succès');
     }
 
     
     public function delete($id)
     {
-       $meeting=Meeting::find($id);
+       $setting=Setting::find($id);
      
-       $meeting->delete();
-       Alert::success('Meeting', 'The meeting has been deleted succesefully !');
-       return redirect('/meeting')->with('message','Supprimé avec succès');
+       $setting->delete();
+       Alert::success('Setting', 'The setting has been deleted succesefully !');
+       return redirect('/setting')->with('message','Supprimé avec succès');
     }
   
 }

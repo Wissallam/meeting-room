@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Feature;
+use App\Models\Room;
 //PDF
 use Barryvdh\DomPDF\Facade\Pdf;
 //ALERT
@@ -53,6 +54,7 @@ class FeatureController extends Controller
         ]
     );
         Feature::create($request->all());
+        //$features=new Feature;
         Alert::success('Feature', 'The feature has been saved succesefully !');
 
          return redirect('/feature');

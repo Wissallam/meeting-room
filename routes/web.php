@@ -28,6 +28,7 @@ Route::get('/dashboard', function () {
 require __DIR__.'/auth.php';
 
 
+
 Route::get('/feature',[FeatureController::class,'index']);
 Route::get('/feature/new',[FeatureController::class,'new']);
 Route::post('/feature/save',[FeatureController::class,'save']);

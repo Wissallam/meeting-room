@@ -8,4 +8,16 @@ use Illuminate\Database\Eloquent\Model;
 class Feature extends Model
 {
     use HasFactory;
+    protected $fillable=[
+        'name',
+        'description',
+        'room_id'
+      ];
+      public function room()
+      {
+          return $this->belongsTo(Room::class);
+      }
+      
+  }
+  
 }

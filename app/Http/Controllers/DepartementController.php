@@ -48,6 +48,7 @@ class DeparyementController extends Controller
         ]
     );
         Departement::create($request->all());
+      //  $departements=new Departement;
         Alert::success('Departement', 'The departement has been saved succesefully !');
 
          return redirect('/departement');

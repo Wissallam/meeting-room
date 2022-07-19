@@ -18,6 +18,7 @@ return new class extends Migration
             $table->timestamps();
             $table->varchar('name');
             $table->varchar('description');
+            $table->unsignedBigInteger('rooms_id');
             $table->foreign('rooms_id')->references('id')->on('rooms');
 
 

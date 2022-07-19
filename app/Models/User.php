@@ -8,6 +8,9 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+use App\Models\Departement;
+use App\Models\Role;
+
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
@@ -18,8 +21,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
         'email',
+        'roles_id',
+        'departements_id',
         'password',
     ];
 
@@ -33,12 +39,24 @@ class User extends Authenticatable
         'remember_token',
     ];
 
+    public function role()
+    {
+        return $this->hasOne(Role::class);
+    }
+
+    public function departement()
+    {
+        return $this->belongsTo(Departement::class);
+    }
+    
+
     /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
+     *   protected $casts = [
+     *  'email_verified_at' => 'datetime',
+     *   ];
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+  
 }

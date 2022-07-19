@@ -22,7 +22,9 @@ return new class extends Migration
             $table->datetime('date-end');
             $table->varchar('nb_guest');
             $table->varchar('type_event');
+            $table->unsignedBigInteger('rooms_id');
             $table->foreign('rooms_id')->references('id')->on('rooms');
+            $table->unsignedBigInteger('users_id');
             $table->foreign('users_id')->references('id')->on('users');
             $table->tinyInteger('need_itsupport');
             $table->tinyInteger('need_media');
