@@ -8,9 +8,10 @@ use App\Models\Departement;
 use Barryvdh\DomPDF\Facade\Pdf;
 //ALERT
 use RealRashid\SweetAlert\Facades\Alert;
-class ProductController extends Controller
+class DepartementController extends Controller
 
-class DeparyementController extends Controller
+
+
 {
     /**
      * Display a listing of the resource.

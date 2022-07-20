@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('meetings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->varchar('name');
-            $table->varchar('description');
-            $table->dateTime('date-start');
-            $table->datetime('date-end');
-            $table->varchar('nb_guest');
-            $table->varchar('type_event');
+            $table->string('name');
+            $table->string('description');
+            $table->dateTime('date-start')->nullable();
+            $table->dateTime('date-end')->nullable();
+            $table->string('nb_guest');
+            $table->string('type_event');
             $table->unsignedBigInteger('rooms_id');
             $table->foreign('rooms_id')->references('id')->on('rooms');
             $table->unsignedBigInteger('users_id');

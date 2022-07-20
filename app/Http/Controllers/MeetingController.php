@@ -10,9 +10,9 @@ use App\Models\User;
 use Barryvdh\DomPDF\Facade\Pdf;
 //ALERT
 use RealRashid\SweetAlert\Facades\Alert;
-class ProductController extends Controller
-
 class MeetingController extends Controller
+
+
 {
     /**
      * Display a listing of the resource.
@@ -31,7 +31,7 @@ class MeetingController extends Controller
     public function new()
     {   $rooms=Room::all();
         $users=User::all();
-         return view('meeting.new',compact('rooms,users'));
+         return view('meeting.new',compact('rooms','users'));
     }
 
     // print feature list using dompdf

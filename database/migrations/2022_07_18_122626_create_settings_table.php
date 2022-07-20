@@ -16,10 +16,10 @@ return new class extends Migration
         Schema::create('settings', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->varchar('organisation_name');
-            $table->varchar('email_it_support');
-            $table->varchar('email_media_team');
-            $table->varchar('email_table_service');
+            $table->string('organisation_name');
+            $table->string('email_it_support');
+            $table->string('email_media_team');
+            $table->string('email_table_service');
 
         });
     }

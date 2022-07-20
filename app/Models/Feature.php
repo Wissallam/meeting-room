@@ -20,4 +20,4 @@ class Feature extends Model
       
   }
   
-}
+
