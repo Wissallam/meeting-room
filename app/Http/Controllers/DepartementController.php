@@ -8,9 +8,8 @@ use App\Models\Departement;
 use Barryvdh\DomPDF\Facade\Pdf;
 //ALERT
 use RealRashid\SweetAlert\Facades\Alert;
-class ProductController extends Controller
 
-class DeparyementController extends Controller
+class DepartementController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,7 +24,8 @@ class DeparyementController extends Controller
     }
 
     public function new()
-    { return view('departement.new');
+    { 
+        return view('departement.new');
     }
 
     // print departement list using dompdf

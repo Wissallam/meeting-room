@@ -12,11 +12,18 @@
         <form method="POST" action="{{ route('register') }}">
             @csrf
 
-            <!-- Name -->
+            <!-- firstname -->
             <div>
-                <x-label for="name" :value="__('Name')" />
+                <x-label for="firstname" :value="__('firstname')" />
 
-                <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
+                <x-input id="firstname" class="block mt-1 w-full" type="text" name="firstname" :value="old('firstname')" required autofocus />
+            </div>
+
+             <!-- lastname -->
+             <div>
+                <x-label for="lastname" :value="__('lastname')" />
+
+                <x-input id="lastname" class="block mt-1 w-full" type="text" name="lastname" :value="old('lastname')" required autofocus />
             </div>
 
             <!-- Email Address -->
@@ -44,6 +51,22 @@
                                 type="password"
                                 name="password_confirmation" required />
             </div>
+
+            <!-- departement -->
+            <div>
+                <x-label for="departement" :value="__('departement')" />
+
+                <x-input id="departement" class="block mt-1 w-full" type="text" name="departement" :value="old('departement')" required autofocus />
+            </div>
+            
+
+            <!-- role -->
+            <div>
+                <x-label for="role" :value="__('role')" />
+
+                <x-input id="role" class="block mt-1 w-full" type="text" name="role" :value="old('role')" required autofocus />
+            </div>
+
 
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

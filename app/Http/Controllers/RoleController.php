@@ -29,7 +29,7 @@ class RoleController extends Controller
 
         ]
     );
-        $role = Role:create($request->all());
+        $role = Role::create($request->all());
         $role->save();
 
         Alert::success('role', 'The role has been saved succesefully !');
