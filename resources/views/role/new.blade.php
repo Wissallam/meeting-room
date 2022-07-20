@@ -4,8 +4,6 @@
 <div class="card-body">
 <form action="{{url('/role/save')}}" class="form" method="post">
  @csrf
- <input type="hidden" value="{{$role->id}}" name="id">
-
  <div class="mb-3">
   <label for="" class="form-label">name</label>
   <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{old('name')}}">
