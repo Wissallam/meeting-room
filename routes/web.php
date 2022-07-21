@@ -9,6 +9,8 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PhotoController;
+use App\Http\Controllers\Admin\DashController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -99,3 +101,6 @@ Route::post('/photo/save',[PhotoController::class,'save']);
 Route::get('/{id}/photo/edit', [PhotoController::class,'edit']);
 Route::post('/photo/update',[PhotoController::class,'update']);
 Route::get('/{id}/photo/delete',[PhotoController::class,'delete']);
+
+// ------------- admin ------------------
+Route::get('admin/dash', [DashController::class, 'admindash'])->name('admin.dash')->middleware('is_admin');
