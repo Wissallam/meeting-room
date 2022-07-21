@@ -26,6 +26,10 @@ use App\Http\Controllers\Admin\DashController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/test', function () {
+    return view('testview');
+});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
