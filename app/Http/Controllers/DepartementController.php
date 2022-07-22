@@ -21,12 +21,12 @@ class DepartementController extends Controller
       //$departements=Departement::all();
        $departements=Departement::paginate(4);
        //return view('departement.index',compact('departements'));
-       return view('admin.base',compact('departements'));
+       return view('admin.departement.index',compact('departements'));
     }
 
     public function new()
     { 
-        return view('departement.new');
+        return view('admin.departement.new');
     }
 
     // print departement list using dompdf
@@ -57,7 +57,7 @@ class DepartementController extends Controller
 
     public function edit($id)
     {  $departement=Departement::find($id);
-       return view('departement.edit',compact('departement'));
+       return view('admin.departement.edit',compact('departement'));
     }
     
     public function update(Request $request)

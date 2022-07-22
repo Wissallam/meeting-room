@@ -52,6 +52,9 @@ require __DIR__.'/auth.php';
 
 
 
+
+
+
 Route::get('/feature',[FeatureController::class,'index']);
 Route::get('/feature/new',[FeatureController::class,'new']);
 Route::post('/feature/save',[FeatureController::class,'save']);
@@ -118,3 +121,14 @@ Route::get('/{id}/photo/delete',[PhotoController::class,'delete']);
 
 // ------------- admin ------------------
 Route::get('admin/dash', [DashController::class, 'admindash'])->name('admin.dash')->middleware('is_admin');
+
+Route::middleware(['auth', 'is_admin'])->group(function () {
+    Route::get('/departement',[DepartementController::class,'index']);
+    Route::get('/departement/new',[DepartementController::class,'new']);
+    Route::post('/departement/save',[DepartementController::class,'save']);
+    //print using dompdf package
+    Route::get('/departement/print',[DepartementController::class,'print']);
+    Route::get('/{id}/departement/edit', [DepartementController::class,'edit']);
+    Route::post('/departement/update',[DepartementController::class,'update']);
+    Route::get('/{id}/departement/delete',[DepartementController::class,'delete']);
+});

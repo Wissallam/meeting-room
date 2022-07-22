@@ -2,6 +2,7 @@
   <h1 class="text-center">Add a room</h1>
 </div>
 <div class="card-body">
+  @include('sweetalert::alert')
 <form action="{{url('/room/save')}}" class="form" method="post">
  @csrf
  <div class="mb-3">

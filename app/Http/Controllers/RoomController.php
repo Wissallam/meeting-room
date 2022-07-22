@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 
@@ -37,8 +38,7 @@ class RoomController extends Controller
     );
         $room = Room::create($request->all());
         $room->save();
-
-        Alert::success('room', 'The room has been saved succesefully !');
+        Alert::success('Room', 'The room has been saved succesefully !');
 
          return redirect('/room');
     }
