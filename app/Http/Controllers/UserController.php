@@ -33,7 +33,7 @@ class UserController extends Controller
         [
             'firstname'=>'required|string',
             'lastname'=>'required|string',
-            'email'=>'email|unique:users|required'
+            'email'=>'email|unique|required',
             'roles_id'=>'required',
             'departements_id'=>'required',
             'password'=>'required',

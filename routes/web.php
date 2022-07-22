@@ -33,6 +33,16 @@ Route::get('/test', function () {
     return view('testview');
 });
 
+Route::get('/viewrooms', function () {
+    return view('room');
+});
+
+Route::get('/viewmeetings', function () {
+    return view('meeting');
+});
+
+
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -4,7 +4,7 @@
 <div class="card-body">
 <form action="{{url('/room/save')}}" class="form" method="post">
  @csrf
- <input type="hidden" value="{{$room->id}}" name="id">
+ 
  <div class="mb-3">
    <label for="" class="form-label">number</label>
    <input type="decimal" class="form-control @error('number') is-invalid @enderror" name="number" value="{{old('number')}}">
