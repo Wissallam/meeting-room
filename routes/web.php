@@ -73,15 +73,6 @@ Route::get('/{id}/meeting/edit', [MeetingController::class,'edit']);
 Route::post('/meeting/update',[MeetingController::class,'update']);
 Route::get('/{id}/meeting/delete',[MeetingController::class,'delete']);
 
-Route::get('/departement',[DepartementController::class,'index']);
-Route::get('/departement/new',[DepartementController::class,'new']);
-Route::post('/departement/save',[DepartementController::class,'save']);
-//print using dompdf package
-Route::get('/departement/print',[DepartementController::class,'print']);
-Route::get('/{id}/departement/edit', [DepartementController::class,'edit']);
-Route::post('/departement/update',[DepartementController::class,'update']);
-Route::get('/{id}/departement/delete',[DepartementController::class,'delete']);
-
 Route::get('/setting',[SettingController::class,'index']);
 Route::get('/setting/new',[SettingController::class,'new']);
 Route::post('/setting/save',[SettingController::class,'save']);

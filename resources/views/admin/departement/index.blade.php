@@ -10,7 +10,8 @@
                 <h1 class="card-title card-title-dash text-dark ">Departements list</h1>
               </div>
               <div>
-                <button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button"><i class="mdi mdi-library-plus"></i>Add new departement</button>
+                <a href="{{ url('departement/new')}}" ><button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button" href="departement/new"><i class="mdi mdi-library-plus"></i>Add new departement</button>
+                </a>
               </div>
             </div>
             <div class="table-responsive  mt-1">
@@ -18,7 +19,7 @@
                 <thead >
                   <tr>
 
-                    <th>Id</th>
+                    <th>#</th>
                     <th>Name</th>
                     <th>Nbr users</th>
                     <th>Action</th>

@@ -1,6 +1,5 @@
-@extends('layouts.base')
+@extends('admin.base')
 @section('content')
-
 <div class="card-header">
          <h1 class="text-center">Edit departement</h1>
       </div>
