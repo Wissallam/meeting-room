@@ -3,11 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Setting;
 //PDF
 use Barryvdh\DomPDF\Facade\Pdf;
 //ALERT
 use RealRashid\SweetAlert\Facades\Alert;
-class ProductController extends Controller
+
 
 class SettingController extends Controller
 {

@@ -30,6 +30,9 @@ Route::get('/test', function () {
     return view('testview');
 });
 
+Route::get('/homecalendar', function () {
+    return view('home');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

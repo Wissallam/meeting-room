@@ -21,7 +21,7 @@
   <tr>
     <td> {{$setting->id}}</td>
     <td> {{$setting->organisation_name}}</td>
-    <td> {{$setting->email_it_support->}}</td>
+    <td> {{$setting->email_it_support}}</td>
     <td> {{$settiong->email_table_service}}</td>
   
     <td> <a href="{{ url('/'.$setting->id.'/setting/edit')}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
