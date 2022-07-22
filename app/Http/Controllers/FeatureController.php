@@ -9,9 +9,10 @@ use App\Models\Room;
 use Barryvdh\DomPDF\Facade\Pdf;
 //ALERT
 use RealRashid\SweetAlert\Facades\Alert;
-class ProductController extends Controller
-
 class FeatureController extends Controller
+
+
+
 {
     /**
      * Display a listing of the resource.

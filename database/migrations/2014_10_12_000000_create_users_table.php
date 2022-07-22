@@ -12,7 +12,7 @@ return new class extends Migration
      * @return void
      */
     public function up()
-    {
+    {    if(!Schema::hasTable('users')){
         Schema::create('users', function (Blueprint $table) {
             $table->id();
             $table->string('firstname');
@@ -27,6 +27,7 @@ return new class extends Migration
             $table->timestamps();
         });
     }
+}
 
     /**
      * Reverse the migrations.

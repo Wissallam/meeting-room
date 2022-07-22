@@ -26,6 +26,9 @@ use App\Http\Controllers\Admin\DashController;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/homecalendar', function () {
+    return view('home');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');

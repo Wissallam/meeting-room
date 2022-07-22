@@ -25,35 +25,35 @@
                 color: #718096;
             }
         </style>
+
+
+          
     </head>
     <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-            @if (Route::has('login'))
-                <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-                    @auth
-                        <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                    @else
-                        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
+  
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
 
-            <div style="text-align: center;">
-             
-
+             <h4 style="font-size:8vw">Welcome to Meeting-room</h4>
+           <h6> 
+             <div style="text-align: center;">
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+            
+                <a  href="/register"> 
+                <button type="button" class="btn btn-primary btn-lg">Register</button></a> 
+            
                 
-                <div class="d-grid gap-2">
-                    <button class="btn btn-primary" type="button">Button</button>
-                    
-                  </div>
+             
+             
+               
+                 <a href="/login">
+                   <button type="button" class="btn btn-primary btn-lg">Log in</button> 
              </div>
+            </div>
 
-
-             <h1 style="font-size:8vw">Welcome to Meeting-room</h1>
+        
+             </h6> 
+             
+           
               
     </body>
 </html>
