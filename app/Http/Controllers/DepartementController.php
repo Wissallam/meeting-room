@@ -8,15 +8,8 @@ use App\Models\Departement;
 use Barryvdh\DomPDF\Facade\Pdf;
 //ALERT
 use RealRashid\SweetAlert\Facades\Alert;
-<<<<<<< HEAD
-class DepartementController extends Controller
-
-
-
-=======
 
 class DepartementController extends Controller
->>>>>>> bffbdf6a5e795a7da269d1248567ee85f8c17d7a
 {
     /**
      * Display a listing of the resource.
@@ -27,7 +20,8 @@ class DepartementController extends Controller
     {
       //$departements=Departement::all();
        $departements=Departement::paginate(4);
-       return view('departement.index',compact('departements'));
+       //return view('departement.index',compact('departements'));
+       return view('admin.base',compact('departements'));
     }
 
     public function new()
