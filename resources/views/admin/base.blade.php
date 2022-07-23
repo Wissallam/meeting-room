@@ -315,10 +315,10 @@
             </a>
             <div class="collapse" id="ui-basic">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">rooms</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">users</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/room">rooms</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/user">users</a></li>
                 <li class="nav-item"> <a class="nav-link" href="/departement">departements</a></li>
-                <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">roles</a></li>
+                <li class="nav-item"> <a class="nav-link" href="/role">roles</a></li>
               </ul>
             </div>
           </li>
