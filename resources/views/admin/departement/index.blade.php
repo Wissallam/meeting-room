@@ -1,4 +1,6 @@
 @extends('admin.base')
+@extends('admin.print')
+@yield('print')
 @section('content')
 <div class="row">
   <div class="row flex-grow">
