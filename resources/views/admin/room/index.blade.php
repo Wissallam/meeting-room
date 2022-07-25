@@ -1,4 +1,6 @@
 @extends('admin.base')
+<link rel="stylesheet" href="{{ asset('photos/photo1.css')}}">
+
 @section('mini-nav')
 <ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
@@ -26,9 +28,9 @@
               <div>
                 <h1 class="card-title card-title-dash text-dark ">Rooms list</h1>
               </div>
-             
+
             </div>
-           
+
           </div>
         </div>
       </div>
@@ -48,14 +50,46 @@
                   <div>
                     <h1 class="card-title card-title-dash text-dark ">Photos list</h1>
                   </div>
-                 
+                  <div>
+                    <a href="{{ url('photo/new')}}" ><button class="btn btn-primary btn-lg text-white mb-0 me-0" type="button" href="photo/new"><i class="mdi mdi-library-plus"></i>Add new photo</button>
+                    </a>
+                  </div>
                 </div>
-              </div>
+                
+
+                <div class="row">
+                 
+                  @foreach ($photos as $photo )
+
+                  <div class="col-sm-6">
+                    <div class="card mt-4 ">
+                      <div class="card-body container ">
+                        <img src="{{asset('/storage/'.$photo->path)}}" class="image" style="width:450px;height:300px;">
+                       
+                        <div class="middle">
+                          <a href="{{url($photo->id.'/photo/edit')}}"><div class="textgreen">Edit</div></a>
+                          <a href="{{url($photo->id.'/photo/delete')}}"><div class="textred mt-1">Delete</div></a>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  @endforeach
+                  <div class="container">
+                    <img src="img_avatar.png" alt="Avatar" class="image" style="width:100%">
+                    <div class="middle">
+                      <div class="text">John Doe</div>
+                    </div>
+                  </div>
+
+                </div>
+    
             </div>
           </div>
         </div>
       </div>
   </div>
+
     <!--end  Photos -->
 
     <!-- Features -->
@@ -69,9 +103,9 @@
                     <div>
                       <h1 class="card-title card-title-dash text-dark ">Features list</h1>
                     </div>
-                   
+
                   </div>
-                 
+
                 </div>
               </div>
             </div>
@@ -79,47 +113,13 @@
         </div>
       </div>
     <!--end  Features -->
-  
-    
+
+
     @endsection
-  
 
 
 
 
 
 
-<h1 class="mt-4 text-center">List of rooms <a class= "btn btn-outline-primary" href="{{url('/room/new')}}"> <i class="bi bi-plus-lg"></i></a>  <a class= "btn btn-outline-primary" href="{{url('/room/print')}}"> <i class="bi bi-printer"></i></a></h1> 
-@include('sweetalert::alert')
-<table class="mt-4 table table-hover table-bordered">
-  <tr class="table-primary">
-    <th>ID</th>
-    <th>number</th>
-    <th>name</th>
-    <th>capacity</th>
-    <th>floor</th>
-    <th>color</th>
-    <th>invalid_from</th>
-    <th>invalid_to</th>
-    <th>edit/delete</th>
 
-  </tr>
-  @foreach ($rooms as $room)
-  <tr>
-    <td> {{$room->id}}</td>
-    <td> {{$room->number}}</td>
-    <td> {{$room->name}}</td>
-    <td> {{$room->capacity}}</td>
-    <td> {{$room->floor}}</td>
-    <td> {{$room->color}}</td>
-    <td> {{$room->invalid_from}}</td>
-    <td> {{$room->invalid_to}}</td>
-    <td> <a href="{{ url('/'.$room->id.'/room/edit')}}" class="btn btn-warning btn-sm"><i class="bi bi-pencil"></i></a>
-        <a href="{{ url('/'.$room->id.'/room/delete')}}" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></a>
-    </td>
-
-
-  </tr>
-  @endforeach
-</table>
-{{ $rooms->links() }}

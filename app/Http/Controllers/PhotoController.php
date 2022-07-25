@@ -6,20 +6,25 @@ use Illuminate\Http\Request;
 use App\Models\Photo;
 use App\Models\Room;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class PhotoController extends Controller
 {
-    public function index()
+   /* public function index()
     {
         $rooms=Room::all();
-        $photos=Photo::paginate(4);
-        return view('photo.index',compact('photos','rooms'));
+        $photos=Photo::paginate(20);
+        return view('admin.photo.index',compact('photos','rooms'));
     }
+   */
 
     public function new()
     {   
         $rooms=Room::all(); 
-        return view('photo.new',compact('photos','rooms'));
+        return view('admin.photo.new',compact('rooms'));
     }
 
     
@@ -27,25 +32,42 @@ class PhotoController extends Controller
     {
       $validation=$request->validate(
         [
-            'path'=>'required|string',
+           // 'path'=>'required|string',
             'rooms_id'=>'required',
-
-
         ]
     );
-        $photo = Photo:create($request->all());
+       /* $input=$request->all();
+        if ($request->hasFile('image')) {
+            $dest_path='public/images/rooms';
+            $image = $request->file('image');
+            $path = $request->file('image')->store('images');
+        }
+        Photo::create($input);
+        
+          $data = Photo::create([
+            'path' => $image_path,
+            'rooms_id' =>$room,
+        ]);
+        */
+        $image_path = $request->file('image')->store('image','public');
+        $room=$request->get('rooms_id');
+      
+        $photo = new Photo();
+
+        $photo->path=$image_path;
+        $photo->rooms_id=$request->get('rooms_id');
         $photo->save();
 
         Alert::success('photo', 'The photo has been saved succesefully !');
 
-         return redirect('/photo');
+         return redirect('/room');
     }
 
     public function edit($id)
     {  $photo=Photo::find($id);
         $rooms=Room::all(); 
 
-       return view('photo.edit',compact('photo','rooms'));
+       return view('admin.photo.edit',compact('photo','rooms'));
     }
 
     public function update(Request $request)

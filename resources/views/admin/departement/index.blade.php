@@ -1,4 +1,6 @@
 @extends('admin.base')
+@extends('admin.print')
+@yield('print')
 @section('content')
 <div class="row">
   <div class="row flex-grow">
@@ -15,7 +17,7 @@
               </div>
             </div>
             <div class="table-responsive  mt-1">
-              <table class="table table-hover">
+              <table class="table table-hover" >
                 <thead >
                   <tr>
 
