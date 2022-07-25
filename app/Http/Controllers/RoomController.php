@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Room;
+use App\Models\Photo;
 use RealRashid\SweetAlert\Facades\Alert;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 
 
@@ -12,13 +15,15 @@ class RoomController extends Controller
 {
     public function index()
     {
-        $rooms=Room::paginate(4);
-        return view('room.index',compact('rooms'));
+        $contents = Storage::get('0a9pqkXpotfYmMW4SJJOTfwdzmAkMNjHSkj7S7D0.jpg');
+        $rooms=Room::paginate(20);
+        $photos=Photo::paginate(20);
+        return view('admin.room.index',compact('rooms','photos','contents'));
     }
 
     public function new()
     {   
-         return view('room.new');
+         return view('admin.room.new');
     }
 
     
@@ -45,7 +50,7 @@ class RoomController extends Controller
 
     public function edit($id)
     {  $room=Room::find($id);
-       return view('room.edit',compact('room'));
+       return view('admin.room.edit',compact('room'));
     }
 
     public function update(Request $request)

@@ -18,7 +18,7 @@
               <table class="table table-striped">
                 <thead>
                   <tr>
-                    <th>ID</th>
+                    <th>#</th>
     <th>Firstname</th>
     <th>Lastname</th>
     <th>Email</th>
@@ -28,12 +28,15 @@
                   </tr>
                 </thead>
               <tbody>
-              </tr>
               @foreach ($users as $user)
               <tr>
+                <td> {{$user->id}}</td>
                 <td> {{$user->firstname}}</td>
                 <td> {{$user->lastname}}</td>
                 <td> {{$user->email}}</td>
+                <td> departement</td>
+                <td> role</td>
+
                 <td> <a href="{{ url('/'.$user->id.'/user/edit')}}" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi-pencil"></i></a>
                     <a href="{{ url('/'.$user->id.'/user/delete')}}" class="btn btn-danger btn-rounded btn-icon"><i class="mdi mdi-delete"></i></a>
                 </td>

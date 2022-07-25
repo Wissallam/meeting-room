@@ -7,6 +7,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Meeting-room </title>
 
+  <link rel="stylesheet" href="{{ asset('photos/photo.css')}}">
+  <script src="{{ asset('photos/photo.js')}}">
+  </script>
+  <link rel="stylesheet" href="{{ asset('photos/photo1.css')}}">
+  <script src="{{ asset('photos/photo1.js')}}">
+  </script>
+
   <!-- plugins:css -->
   <link rel="stylesheet" href="{{ asset('theme/template/vendors/feather/feather.css')}}">
   <link rel="stylesheet" href="{{ asset('theme/template/vendors/mdi/css/materialdesignicons.min.css')}}">
@@ -351,30 +358,14 @@
             <div class="col-sm-12">
               <div class="home-tab">
                 <div class="d-sm-flex align-items-center justify-content-between border-bottom">
-                  <ul class="nav nav-tabs" role="tablist">
-                    <li class="nav-item">
-                      <a class="nav-link active ps-0" id="home-tab" data-bs-toggle="tab" href="#overview" role="tab" aria-controls="overview" aria-selected="true">Overview</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" id="profile-tab" data-bs-toggle="tab" href="#audiences" role="tab" aria-selected="false">Audiences</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link" id="contact-tab" data-bs-toggle="tab" href="#demographics" role="tab" aria-selected="false">Demographics</a>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link border-0" id="more-tab" data-bs-toggle="tab" href="#more" role="tab" aria-selected="false">More</a>
-                    </li>
-                  </ul>
+                  @yield('mini-nav')
                   <div>
                     <div class="btn-wrapper">
-                      <a href="#" class="btn btn-otline-dark align-items-center"><i class="icon-share"></i> Share</a>
-                      <a href="#" class="btn btn-otline-dark"><i class="icon-printer"></i> Print</a>
-                      <a href="#" class="btn btn-primary text-white me-0"><i class="icon-download"></i> Export</a>
+                      @yield('print')
                     </div>
                   </div>
                 </div>
                 <div class="tab-content tab-content-basic">
-                  <div class="tab-pane fade show active" id="overview" role="tabpanel" aria-labelledby="overview"> 
                     @include('sweetalert::alert')
                     @yield('content')
                    
