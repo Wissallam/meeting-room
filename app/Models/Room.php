@@ -20,10 +20,10 @@ class Room extends Model
         'invalid_to',
     ];
 
-    public function photos()
-    {
-        return $this->hasMany(Photo::class);
-    }
+    ///public function photos()
+   // {
+       // return $this->hasMany(Photo::class);
+ //   }
 }
 
 
