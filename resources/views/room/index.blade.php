@@ -1,4 +1,5 @@
 <h1 class="mt-4 text-center">List of rooms <a class= "btn btn-outline-primary" href="{{url('/room/new')}}"> <i class="bi bi-plus-lg"></i></a>  <a class= "btn btn-outline-primary" href="{{url('/room/print')}}"> <i class="bi bi-printer"></i></a></h1> 
+@include('sweetalert::alert')
 <table class="mt-4 table table-hover table-bordered">
   <tr class="table-primary">
     <th>ID</th>

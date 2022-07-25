@@ -4,19 +4,20 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Role;
+use RealRashid\SweetAlert\Facades\Alert;
 
 
 class RoleController extends Controller
 {
     public function index()
     {
-        $roles=Role::paginate(4);
-        return view('role.index',compact('roles'));
+        $roles=Role::paginate(20);
+        return view('admin.role.index',compact('roles'));
     }
 
     public function new()
     {   
-         return view('role.new');
+         return view('admin.role.new');
     }
 
     
@@ -39,7 +40,7 @@ class RoleController extends Controller
 
     public function edit($id)
     {  $role=Role::find($id);
-       return view('role.edit',compact('role'));
+       return view('admin.role.edit',compact('role'));
     }
 
     public function update(Request $request)
@@ -53,7 +54,8 @@ class RoleController extends Controller
 
     );
     $roles->name=$request->get('name');
-    Alert::success('role', 'The role has been modifiedd succesefully !');
+    $roles->save();
+    Alert::success('role', 'The role has been modified succesefully !');
     return redirect('/role');
     }
 
