@@ -2,9 +2,13 @@
   <h1 class="text-center">Add a room</h1>
 </div>
 <div class="card-body">
+  @include('sweetalert::alert')
 <form action="{{url('/room/save')}}" class="form" method="post">
  @csrf
+<<<<<<< HEAD
  
+=======
+>>>>>>> dff19baae7932d19304e3465900f57e8dcfb29ab
  <div class="mb-3">
    <label for="" class="form-label">number</label>
    <input type="decimal" class="form-control @error('number') is-invalid @enderror" name="number" value="{{old('number')}}">

@@ -14,16 +14,16 @@ class UserController extends Controller
 {
     public function index()
     {
-        $users=User::paginate(4);
+        $users=User::paginate(20);
         $departements=Departement::all();
         $roles=Role::all();
-        return view('user.index',compact('users','departements','roles'));
+        return view('admin.user.index',compact('users','departements','roles'));
     }
 
     public function new()
     {   $departements=Departement::all();
         $roles=Role::all();
-         return view('user.new',compact('departements,roles'));
+         return view('admin.user.new',compact('departements','roles'));
     }
 
     
@@ -33,7 +33,7 @@ class UserController extends Controller
         [
             'firstname'=>'required|string',
             'lastname'=>'required|string',
-            'email'=>'email|unique|required',
+            'email'=>'email|unique:users|required',
             'roles_id'=>'required',
             'departements_id'=>'required',
             'password'=>'required',
@@ -59,7 +59,7 @@ class UserController extends Controller
     {  $user=User::find($id);
        $departements=Departement::all();
        $roles=Role::all();
-       return view('user.edit',compact('user','departements','roles'));
+       return view('admin.user.edit',compact('user','departements','roles'));
     }
 
     public function update(Request $request)
@@ -69,7 +69,7 @@ class UserController extends Controller
         [
             'firstname'=>'required|string',
             'lastname'=>'required|string',
-            'email'=>'email|unique:users|required'
+            'email'=>'email|unique:users|required',
             'roles_id'=>'required',
             'departements_id'=>'required',
             'password'=>'required',

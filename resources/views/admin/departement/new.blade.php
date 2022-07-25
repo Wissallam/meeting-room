@@ -1,4 +1,4 @@
-@extends('layouts.base')
+@extends('admin.base')
 @section('content')
 <!-- @if ( $errors->any())
   <div class="alert alert-danger" role="alert">
@@ -11,10 +11,20 @@
   </div>
  
   @endif -->
+  <div class="row">
+    <h3 class="text-center">Add a new departement</h3>
+    <div class="row flex-grow">
+        <div class="col-12 grid-margin stretch-card">
+         
+          <div class="card card-rounded">
+            <div class="card-body">
+              <div class="d-sm-flex justify-content-between align-items-start">
+                
+                <div>
+                </div>
+              </div>
 
-<div class="card-header">
-         <h1 class="text-center">New departement</h1>
-      </div>
+
     <div class="card-body">
        <form action="{{url('/departement/save')}}" class="form" method="post">
         @csrf
@@ -34,6 +44,7 @@
 
     </div>
   </div>
+ 
 
 
 @endsection
