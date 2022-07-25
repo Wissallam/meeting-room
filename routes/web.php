@@ -10,6 +10,9 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\Admin\DashController;
+use App\Http\Controllers\TestController;
+
+
 
 
 /*
@@ -27,25 +30,22 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// -----------------TEST-------------------
-Route::get('/test', function () {
-    return view('testview');
-});
-Route::get('/test2', function () {
-    return view('admin.base');
-});
 
-Route::get('/test3', function () {
-    return view('admin.departement');
-});
+
+
+
+
+
+
+Route::get('/listroom',[TestController::class,'index']);
+
 // -----------------TEST-------------------
 
-Route::get('/homecalendar', function () {
-    return view('home');
-});
+
+
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    return view('home');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
