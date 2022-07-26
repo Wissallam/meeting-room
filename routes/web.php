@@ -136,4 +136,8 @@ Route::post('/photo/save',[PhotoController::class,'save']);
 Route::get('/{id}/photo/edit', [PhotoController::class,'edit']);
 Route::post('/photo/update',[PhotoController::class,'update']);
 Route::get('/{id}/photo/delete',[PhotoController::class,'delete']);
+
+Route::get('/calendar', function () {
+    return view('admin.calender');
+});
 });
