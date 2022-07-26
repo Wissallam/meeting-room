@@ -3,6 +3,8 @@
         display: grid;
         grid-template-columns: 200px 1fr;
         padding: 20px;
+        background-color: rgb(255, 255, 255);
+
     }
     #events {
         grid-column: 1;
@@ -10,9 +12,11 @@
     #calendar {
         grid-column: 2;
         height: 700px;
+        background-color: rgb(237, 247, 248);
+
     }
     .dropEvent {
-        background-color: DodgerBlue;
+        background-color: rgb(29, 227, 237);
         color: white;
         padding: 5px 16px;
         margin-bottom: 10px;

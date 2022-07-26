@@ -300,6 +300,20 @@
             </div>
           </li>
           <li class="nav-item nav-category">Reservation</li>
+          <li class="nav-item">
+          <a class="nav-link"  href="/calendar" aria-expanded="false" aria-controls="ui-basic">
+            <i class="menu-icon mdi mdi-calendar"></i>
+            <span class="menu-title">calendar</span>
+            <i class="menu-arrow"></i> 
+          </a>
+          </li>
+          <li class="nav-item">
+          <a class="nav-link"  href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
+            <i class="menu-icon mdi mdi-table"></i>
+            <span class="menu-title">reservations</span>
+            <i class="menu-arrow"></i> 
+          </a>
+          </li>
           <li class="nav-item nav-category">Settings</li>
           <li class="nav-item">
             <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">

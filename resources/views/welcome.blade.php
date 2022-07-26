@@ -1,59 +1,36 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Background</title>
+    <link rel="stylesheet" href="{{ asset('storage/video/style.css')}}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
 
-        <title>Meeting-room</title>
+      <div class="home">
+        <video autoplay muted loop>
+          <source src="{{asset('storage/video/home.mp4')}}" type="video/mp4" />
+        </video>
+        <div class="overlay"></div>
+        <div class="home-content">
+          <h1>MEETING app.</h1>
+          <h1>booking</h1>
 
-   
-         <style>
-            html {
-                background: url("https://t4.ftcdn.net/jpg/03/14/67/49/360_F_314674980_2DDfLr6oEWQkcgWLyh9MBjzZBrRl7G00.jpg") no-repeat center center fixed;
-                -webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-            }
-    
-            div.link h3 {
-                font-size: large;
-            }
-    
-            div.link p {
-                font-size: small;
-                color: #718096;
-            }
-        </style>
+          <div class="middle-line"></div>
+          <div>
+          <a  href="/login"> <button><span>LOGIN </span></button></a>
+          <a  href="/register"> <button><span>REGISTER </span></button></a>
+          </div>
+        </div>
+      </div>
 
-
-          
-    </head>
-    <body class="antialiased">
-  
-
-
-             <h4 style="font-size:8vw">Welcome to Meeting-room</h4>
-           <h6> 
-             <div style="text-align: center;">
-                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
-            
-                <a  href="/register"> 
-                <button type="button" class="btn btn-primary btn-lg">Register</button></a> 
-            
-                
-             
-             
-               
-                 <a href="/login">
-                   <button type="button" class="btn btn-primary btn-lg">Log in</button> 
-             </div>
-            </div>
-
-        
-             </h6> 
-             
-           
-              
-    </body>
+  </body>
 </html>
