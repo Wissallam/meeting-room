@@ -71,6 +71,7 @@ document.addEventListener('livewire:load', function () {
         editable: true,  
         eventClick: info => {
             if (confirm("Voulez-vous vraiment supprimer cet événement ?")) {
+               // window.location.href = '/room';
                 info.event.remove();
                 @this.eventRemove(info.event.id);
             }
@@ -84,8 +85,12 @@ document.addEventListener('livewire:load', function () {
         eventDrop: info => @this.eventChange(info.event),
         selectable: true,
         select: arg => {
+
+//window.location.href = '/meeting/new';
+           //     /*     */
+
             const title = prompt('Titre :');
-           
+
             const id = create_UUID();
             if (title) {
                 calendar.addEvent({
@@ -99,7 +104,8 @@ document.addEventListener('livewire:load', function () {
             };
             calendar.unselect();
         },
-    });        
+    });    
+        
     calendar.render();
 });
 </script>

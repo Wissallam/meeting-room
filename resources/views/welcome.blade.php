@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Video Background</title>
+    <title>Meeting-room</title>
     <link rel="stylesheet" href="{{ asset('storage/video/style.css')}}" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -25,9 +25,10 @@
           <h1>booking</h1>
 
           <div class="middle-line"></div>
-          <div>
-          <a  href="/login"> <button><span>LOGIN </span></button></a>
-          <a  href="/register"> <button><span>REGISTER </span></button></a>
+        
+          <div class="d-grid gap-2 d-md-block" style="  text-align: center;    ">
+          <a  href="/login"> <button ><span style="display: inline;">LOG IN </span></button></a>
+          <a  href="/register"> <button><span style="display: inline;">REGISTER </span></button></a>
           </div>
         </div>
       </div>

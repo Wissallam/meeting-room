@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Departement;
+use App\Models\User;
+
 //PDF
 use Barryvdh\DomPDF\Facade\Pdf;
 //ALERT
@@ -19,9 +21,10 @@ class DepartementController extends Controller
     public function index()
     {
       //$departements=Departement::all();
-       $departements=Departement::paginate(4);
+       $departements=Departement::paginate(20);
+       $users=User::all();
        //return view('departement.index',compact('departements'));
-       return view('admin.departement.index',compact('departements'));
+       return view('admin.departement.index',compact('departements','users'));
     }
 
     public function new()

@@ -10,6 +10,9 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\Admin\DashController;
+use App\Http\Controllers\CalendarController;
+
+
 
 
 /*
@@ -27,26 +30,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-// -----------------TEST-------------------
-Route::get('/test', function () {
-    return view('testview');
-});
-Route::get('/test2', function () {
-    return view('admin.base');
-});
 
-Route::get('/test3', function () {
-    return view('admin.departement');
-});
-// -----------------TEST-------------------
 
-Route::get('/homecalendar', function () {
-    return view('home');
-});
+
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'is_admin'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
@@ -136,8 +126,7 @@ Route::post('/photo/save',[PhotoController::class,'save']);
 Route::get('/{id}/photo/edit', [PhotoController::class,'edit']);
 Route::post('/photo/update',[PhotoController::class,'update']);
 Route::get('/{id}/photo/delete',[PhotoController::class,'delete']);
+Route::get('/calendar', [CalendarController::class,'showcalendar']);
+Route::get('/calendar/new', [CalendarController::class,'newmeet']);
 
-Route::get('/calendar', function () {
-    return view('admin.calender');
-});
 });

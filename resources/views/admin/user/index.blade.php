@@ -34,8 +34,8 @@
                 <td> {{$user->firstname}}</td>
                 <td> {{$user->lastname}}</td>
                 <td> {{$user->email}}</td>
-                <td> departement</td>
-                <td> role</td>
+                <td> {{$user->role->name}}</td>
+                <td> {{$user->departement->name}}</td>
 
                 <td> <a href="{{ url('/'.$user->id.'/user/edit')}}" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi-pencil"></i></a>
                     <a href="{{ url('/'.$user->id.'/user/delete')}}" class="btn btn-danger btn-rounded btn-icon"><i class="mdi mdi-delete"></i></a>

@@ -33,7 +33,7 @@
                       <tr>
                         <td> {{$departement->id}}</td>
                         <td> {{$departement->name}}</td>
-                        <td> #nbr of users</td>
+                        <td> {{$departement->users->count()}}</td>
 
                         <td> <a href="{{ url('/'.$departement->id.'/departement/edit')}}" class="btn btn-warning btn-rounded btn-icon"><i class="mdi mdi-pencil"></i></a>
                             <a href="{{ url('/'.$departement->id.'/departement/delete')}}" class="btn btn-danger btn-rounded btn-icon"><i class="mdi mdi-delete"></i></a>
