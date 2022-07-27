@@ -18,13 +18,8 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('description');
-<<<<<<< HEAD
-            $table->dateTime('date-start')->nullable();
-            $table->dateTime('date-end')->nullable();
-=======
             $table->dateTime('date-start');
             $table->datetime('date-end');
->>>>>>> c3b1aef156298e9d2d44e44ae19a4d20958e4c25
             $table->string('nb_guest');
             $table->string('type_event');
             $table->unsignedBigInteger('rooms_id');
