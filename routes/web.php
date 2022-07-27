@@ -10,7 +10,11 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\Admin\DashController;
+<<<<<<< HEAD
+use App\Http\Controllers\CalendarController;
+=======
 use App\Http\Controllers\TestController;
+>>>>>>> main
 
 
 
@@ -136,8 +140,7 @@ Route::post('/photo/save',[PhotoController::class,'save']);
 Route::get('/{id}/photo/edit', [PhotoController::class,'edit']);
 Route::post('/photo/update',[PhotoController::class,'update']);
 Route::get('/{id}/photo/delete',[PhotoController::class,'delete']);
+Route::get('/calendar', [CalendarController::class,'showcalendar']);
+Route::get('/calendar/new', [CalendarController::class,'newmeet']);
 
-Route::get('/calendar', function () {
-    return view('admin.calender');
-});
 });

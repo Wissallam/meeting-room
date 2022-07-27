@@ -82,6 +82,7 @@ class UserController extends Controller
     $user->roles_id=$request->get('roles_id');
     $user->departements_id=$request->get('departements_id');
     $user->password=Hash::make($request->get('password'));
+    $user->save();
     Alert::success('user', 'The user has been modifiedd succesefully !');
     return redirect('/user');
     }

@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use Livewire\Component;
 use App\Models\Event;
+use RealRashid\SweetAlert\Facades\Alert;
+
 
 class Calendar extends Component
 {
@@ -20,6 +22,7 @@ class Calendar extends Component
     public function render()
     {
         $this->events = json_encode(Event::all());
+
         return view('livewire.calendar');
     }
     public function eventRemove($id)
@@ -30,5 +33,9 @@ public function eventAdd($event)
 {
     Event::create($event);
 }
+ public function newmeet(){
+    return view('admin.departement.index');
+    //return Alert::html('Html Title', '<h1>hello</h1>', 'Info Message');
+   } 
 
 }
