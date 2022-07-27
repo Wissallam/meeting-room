@@ -9,7 +9,7 @@
         <!-- Validation Errors -->
         <x-auth-validation-errors class="mb-4" :errors="$errors" />
 
-        <form method="POST" action="{{ route('register') }}">
+        <form method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
             @csrf
 
             <!-- firstname -->
@@ -65,6 +65,14 @@
                 <x-label for="role" :value="__('role')" />
 
                 <x-input id="role" class="block mt-1 w-full" type="text" name="role" :value="old('role')" required autofocus />
+            </div>
+
+            <!-- profile -->
+
+            <div>
+                <x-label for="profile" :value="__('profile')" />
+
+                <x-input id="profile" class="block mt-1 w-full"  type="file"  name="profile" :value="old('profile')" required autofocus />
             </div>
 
 

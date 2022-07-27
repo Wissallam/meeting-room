@@ -10,11 +10,11 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\Admin\DashController;
-<<<<<<< HEAD
-use App\Http\Controllers\CalendarController;
-=======
 use App\Http\Controllers\TestController;
->>>>>>> main
+use App\Http\Controllers\CalendarController;
+
+
+
 
 
 
@@ -34,8 +34,20 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//test form calendar
+
+//Route::resource('/events',[EventController::class,'store']);
+Route::get('/events', function () {
+    return view('eventmodel');
+});
+
+//test list of meetings for a user
+
+Route::get('/test',[MeetingController::class,'index']);
+//testphotodeprofil
 
 
+Route::get('/profil',[MeetingController::class,'profile']);
 
 
 

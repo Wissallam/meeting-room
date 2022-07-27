@@ -1,4 +1,9 @@
 @extends('dashboard')
+ <!-- roomuser-->
+
+ <link rel="stylesheet" href="{{ asset('roomsuser/flipcard.css')}}">
+ <script src="{{ asset('roomsuser/flipcard.js')}}">
+   </script>
 @section('content')
 <div class="row">
     <div class="row flex-grow">
@@ -24,11 +29,11 @@
                       </div>
                       <div class="card__body">
                         <h3 class="card__name">{{$photo->room->name}}</h3>
-                        <p class="card__job">astronaut & engineer</p>
+                        <p class="card__job">meeting-room</p>
                         <p class="card__bio"> {{$photo->room->name}}</p>
                       </div>
                       <div class="card__footer">
-                        <p class="card__date">Feb 10 2018</p>
+                        <p class="card__date">june 2022</p>
                         <p class=""></p>
                       </div>
                     </div>
