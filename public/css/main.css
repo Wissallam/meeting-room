@@ -1,0 +1,33 @@
+<style>
+html {
+    background: url("https://t4.ftcdn.net/jpg/03/14/67/49/360_F_314674980_2DDfLr6oEWQkcgWLyh9MBjzZBrRl7G00.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+div.link h3 {
+    font-size: large;
+}
+
+div.link p {
+    font-size: small;
+    color: #718096;
+}
+
+img{
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    box-shadow: 0 0 5px blue;
+    filter: drop-shadow(0 0 5px blue);
+
+}
+
+.box{
+    width: 400px;
+    height: 400px;
+    
+}
+</style>

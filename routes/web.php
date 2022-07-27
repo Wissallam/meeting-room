@@ -10,7 +10,11 @@ use App\Http\Controllers\RoomController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\PhotoController;
 use App\Http\Controllers\Admin\DashController;
+<<<<<<< HEAD
 use App\Http\Controllers\CalendarController;
+=======
+use App\Http\Controllers\TestController;
+>>>>>>> main
 
 
 
@@ -34,9 +38,19 @@ Route::get('/', function () {
 
 
 
+
+
+
+Route::get('/listroom',[TestController::class,'index']);
+
+// -----------------TEST-------------------
+
+
+
+
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'is_admin'])->name('dashboard');
+    return view('home');
+})->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
