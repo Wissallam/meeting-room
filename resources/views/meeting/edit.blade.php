@@ -23,16 +23,16 @@
           @enderror
         </div>
         <div class="mb-3">
-            <label for="" class="form-label">date_start</label>
-            <input type="date" class="form-control @error('date_start') is-invalid @enderror" name="date_start" value="{{$meeeting->date_start}}">
-            @error('date_start')
+            <label for="" class="form-label">date-start</label>
+            <input type="date" class="form-control @error('date-start') is-invalid @enderror" name="date-start" value="{{$meeeting->date-start}}">
+            @error('date-start')
              <p class="text-danger"> {{$message}}</p>
             @enderror
           </div>
           <div class="mb-3">
-            <label for="" class="form-label">date_end</label>
-            <input type="date" class="form-control @error('date_end') is-invalid @enderror" name="date_end" value="{{$meeeting->date_end}}">
-            @error('date_end')
+            <label for="" class="form-label">date-end</label>
+            <input type="date" class="form-control @error('date-end') is-invalid @enderror" name="date_end" value="{{$meeeting->date-end}}">
+            @error('date-end')
              <p class="text-danger"> {{$message}}</p>
             @enderror
           </div>
@@ -40,39 +40,31 @@
        
         <div class="mb-3">
             <label for="" class="form-label">Room</label>
-            <select name="room_id" id="" class="form-control  @error('room_id') is-invalid @enderror">
+            <select name="rooms_id" id="" class="form-control  @error('rooms_id') is-invalid @enderror">
             <option selected>--select a room--</option>
               @foreach ($rooms as $room)
               <option value="{{$room->id}}">{{$room->name}}</option>
                   
               @endforeach
             </select>
-            @error('room_id')
+            @error('rooms_id')
             <p class="text-danger">{{$message}}</p>
           @enderror  
           </div> 
 
           <div class="mb-3">
             <label for="" class="form-label">User</label>
-            <select name="user_id" id="" class="form-control  @error('user_id') is-invalid @enderror">
+            <select name="users_id" id="" class="form-control  @error('users_id') is-invalid @enderror">
             <option selected>--select a user--</option>
               @foreach ($users as $user)
               <option value="{{$user->id}}">{{$user->name}}</option>
                   
               @endforeach
             </select>
-            @error('user_id')
+            @error('users_id')
             <p class="text-danger">{{$message}}</p>
           @enderror  
           </div> 
-
-
-
-
-
-
-
-
           <div class="mb-3">
             <label for="" class="form-label">need_itsupport</label>
             <input type="text" class="form-control @error('need_itsupport') is-invalid @enderror" name="need_itsupport" value="{{$meeeting->need_itsupport}}">

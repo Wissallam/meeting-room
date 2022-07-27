@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Models\Meeting;
 use App\Models\Room;
@@ -19,13 +20,28 @@ class MeetingController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    //public function index()
+   // {
+       // $meetings=Meeting::all();
+       // $userid=Auth::user()->id;
+       // $meetings=Meeting::paginate(20);
+        //$rooms=Room::all();
+        //$users=User::all();
+        //return view('meeting.index',compact('meetings','rooms','users'));
+   // }
     public function index()
     {
-        //$meetings=Meeting::all();
-        $meetings=Meeting::paginate(4);
-        $rooms=Room::all();
-        $users=User::all();
-        return view('meeting.index',compact('meetings','rooms','users'));
+        $user_id=Auth::user()->id;
+        $user=User::find($user_id);
+        $meetings= $user->meeting;
+        return view('usermeetings',compact('meetings'));
+    }
+
+    public function profile()
+    {
+        $profile=Auth::user()->profile;
+      
+        return view('profiluser',compact('profile'));
     }
 
     public function new()
@@ -53,13 +69,13 @@ class MeetingController extends Controller
         [
             'name'=>'required',
             'description'=>'required|string',
-            'date_start'=>'required',
-            'date_end'=>'required',
+            'date-start'=>'required',
+            'date-end'=>'required',
             'nb_guest'=>'required',
             'type_event'=>'required',
             'rooms_id'=>'required',
             'users_id'=>'required',
-            'need_it_support'=>'required',
+            'need_itsupport'=>'required',
             'need_media'=>'required',
 
         ]
@@ -85,8 +101,8 @@ class MeetingController extends Controller
         [
             'name'=>'required',
             'description'=>'required|string',
-            'date_start'=>'required',
-            'date_end'=>'required',
+            'date-start'=>'required',
+            'date-end'=>'required',
             'nb_guest'=>'required',
             'type_event'=>'required',
             'rooms_id'=>'required',
@@ -98,8 +114,8 @@ class MeetingController extends Controller
     );
        $meeting->name=$request->get('name');
        $meeting->description=$request->get('description');
-       $meeting->date_start=$request->get('date_start');
-       $meeting->date_end=$request->get('date_end');
+       $meeting->date_start=$request->get('date-start');
+       $meeting->date_end=$request->get('date-end');
        $meeting->nb_guest=$request->get('nb_guest');
        $meeting->type_event=$request->get('type_event');
        $meeting->need_itsupport=$request->get('need_itsupport');

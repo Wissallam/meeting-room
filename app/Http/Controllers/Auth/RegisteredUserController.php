@@ -11,6 +11,9 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
+
 class RegisteredUserController extends Controller
 {
     /**
@@ -40,6 +43,7 @@ class RegisteredUserController extends Controller
             'departement' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
+            
         ]);
 
         $user = User::create([
@@ -49,7 +53,9 @@ class RegisteredUserController extends Controller
             'departements_id' => $request->departement,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'profile'=> $request->file('profile')->store('image','public'),
         ]);
+      
 
         event(new Registered($user));
 
