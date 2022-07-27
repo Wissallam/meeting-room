@@ -10,6 +10,7 @@ use Laravel\Sanctum\HasApiTokens;
 
 use App\Models\Departement;
 use App\Models\Role;
+use App\Models\Meeting;
 
 class User extends Authenticatable
 {
@@ -27,6 +28,8 @@ class User extends Authenticatable
         'roles_id',
         'departements_id',
         'password',
+        'profile',
+        
     ];
 
     /**
@@ -49,6 +52,10 @@ class User extends Authenticatable
         return $this->belongsTo(Departement::class);
     }
     
+    public function meeting()
+    {
+        return $this->hasMany(Meeting::class, 'users_id');
+    }
 
     /**
      * The attributes that should be cast.

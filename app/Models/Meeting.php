@@ -11,23 +11,23 @@ class Meeting extends Model
     protected $fillable=[
         'name',
         'description',
-        'date_start',
-        'date_end',
+        'date-start',
+        'date-end',
         'nb_guest',
         'type_event',
-        'room_id',
-        'user_id' ,
+        'rooms_id',
+        'users_id' ,
         'need_itsupport',
         'need_media',
       ];
       public function room()
       {
-          return $this->hasOne(Room::class);
+        return $this->belongsTo(Room::class, 'rooms_id');
       }
 
       public function user()
       {
-          return $this->belongsTo(User::class);
+          return $this->belongsTo(User::class , 'users_id');
       }
       
       
