@@ -49,6 +49,9 @@ Route::get('/', function () {
 Route::get('/testform', function () {
     return view('testform');
 });
+Route::get('/testcal', function () {
+    return view('testcal');
+});
 
 //test list of meetings for a user
 

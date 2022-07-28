@@ -9,10 +9,11 @@ class Meeting extends Model
 {
     use HasFactory;
     protected $fillable=[
-        'name',
+        'id',
+        'title',
         'description',
-        'date-start',
-        'date-end',
+        'start',
+        'end',
         'nb_guest',
         'type_event',
         'rooms_id',

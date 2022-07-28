@@ -3,7 +3,7 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
-use App\Models\Event;
+use App\Models\Meeting;
 use RealRashid\SweetAlert\Facades\Alert;
 
 
@@ -12,7 +12,7 @@ class Calendar extends Component
     public $events = [];
     public function eventChange($event)
     {
-        $e = Event::find($event['id']);
+        $e = Meeting::find($event['id']);
         $e->start = $event['start'];
         if(Arr::exists($event, 'end')) {
             $e->end = $event['end'];
@@ -21,17 +21,17 @@ class Calendar extends Component
     }
     public function render()
     {
-        $this->events = json_encode(Event::all());
+        $this->events = json_encode(Meeting::all());
 
         return view('livewire.calendar');
     }
     public function eventRemove($id)
 {
-    Event::destroy($id);
+    Meeting::destroy($id);
 }
 public function eventAdd($event)
 {
-    Event::create($event);
+    Meeting::create($event);
 }
  public function newmeet(){
     return view('admin.departement.index');
