@@ -67,10 +67,10 @@ class MeetingController extends Controller
     {
       $validation=$request->validate(
         [
-            'name'=>'required',
-            'description'=>'required|string',
-            'date-start'=>'required',
-            'date-end'=>'required',
+            'title'=>'required',
+            'description'=>'string',
+            'start'=>'required',
+            'end'=>'required',
             'nb_guest'=>'required',
             'type_event'=>'required',
             'rooms_id'=>'required',
@@ -99,10 +99,10 @@ class MeetingController extends Controller
        $meeting=Meeting::find($request->get('id'));
        $validation=$request->validate(
         [
-            'name'=>'required',
-            'description'=>'required|string',
-            'date-start'=>'required',
-            'date-end'=>'required',
+            'title'=>'required',
+            'description'=>'string',
+            'start'=>'required',
+            'end'=>'required',
             'nb_guest'=>'required',
             'type_event'=>'required',
             'rooms_id'=>'required',
@@ -112,10 +112,10 @@ class MeetingController extends Controller
         ]
       
     );
-       $meeting->name=$request->get('name');
+       $meeting->title=$request->get('title');
        $meeting->description=$request->get('description');
-       $meeting->date_start=$request->get('date-start');
-       $meeting->date_end=$request->get('date-end');
+       $meeting->date_start=$request->get('start');
+       $meeting->date_end=$request->get('end');
        $meeting->nb_guest=$request->get('nb_guest');
        $meeting->type_event=$request->get('type_event');
        $meeting->need_itsupport=$request->get('need_itsupport');

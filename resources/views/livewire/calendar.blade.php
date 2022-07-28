@@ -28,6 +28,116 @@
     }
 </style>
 
+<!------------------ Form modal---------------- -->
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    form
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form class="forms-sample" action="{{url('/meeting/save')}}" method="post" enctype="multipart/form-data">
+                @csrf  
+                <div class="mb-3">
+                    <label for="" class="form-label">id</label>
+                    <input type="text" class="form-control @error('id') is-invalid @enderror" name="id" value="{{old('id')}}">
+                    @error('id')
+                     <p class="text-danger"> {{$message}}</p>
+                    @enderror
+                  </div>
+                <div class="mb-3">
+                  <label for="" class="form-label">title</label>
+                  <input type="text" class="form-control @error('title') is-invalid @enderror" name="title" value="{{old('title')}}">
+                  @error('title')
+                   <p class="text-danger"> {{$message}}</p>
+                  @enderror
+                </div>
+  
+                <div class="mb-3">
+                  <label for="" class="form-label ">description</label>
+                  <input type="description" class="form-control @error('name') is-invalid @enderror" name="description" value="{{old('description')}}" >
+                  @error('description')
+                    <p class="text-danger">{{$message}}</p>
+                  @enderror
+                </div>
+                <div class="mb-3">
+                    <label for="" class="form-label ">start</label>
+                    <input type="date" class="form-control @error('start') is-invalid @enderror" name="start" value="{{old('start')}}" >
+                    @error('start')
+                      <p class="text-danger">{{$message}}</p>
+                    @enderror
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label ">end</label>
+                    <input type="date" class="form-control @error('end') is-invalid @enderror" name="end" value="{{old('end')}}" >
+                    @error('end')
+                      <p class="text-danger">{{$message}}</p>
+                    @enderror
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label ">nb_guest</label>
+                    <input type="text" class="form-control @error('nb_guest') is-invalid @enderror" name="nb_guest" value="{{old('nb_guest')}}" >
+                    @error('nb_guest')
+                      <p class="text-danger">{{$message}}</p>
+                    @enderror
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label ">type_event</label>
+                    <input type="text" class="form-control @error('type_event') is-invalid @enderror" name="type_event" value="{{old('type_event')}}" >
+                    @error('type_event')
+                      <p class="text-danger">{{$message}}</p>
+                    @enderror
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label ">rooms_id</label>
+                    <input type="text" class="form-control @error('rooms_id') is-invalid @enderror" name="rooms_id" value="{{old('rooms_id')}}" >
+                    @error('rooms_id')
+                      <p class="text-danger">{{$message}}</p>
+                    @enderror
+                  </div>
+                  <div class="mb-3">
+                    <label for="" class="form-label ">users_id</label>
+                    <input type="text" class="form-control @error('users_id') is-invalid @enderror" name="users_id" value="{{old('users_id')}}" >
+                    @error('users_id')
+                      <p class="text-danger">{{$message}}</p>
+                    @enderror
+                  </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label ">need_itsupport</label>
+                        <input type="text" class="form-control @error('need_itsupport') is-invalid @enderror" name="need_itsupport" value="{{old('need_itsupport')}}" >
+                        @error('need_itsupport')
+                          <p class="text-danger">{{$message}}</p>
+                        @enderror
+                      </div>
+                      <div class="mb-3">
+                        <label for="" class="form-label ">need_media</label>
+                        <input type="text" class="form-control @error('need_media') is-invalid @enderror" name="need_media" value="{{old('need_media')}}" >
+                        @error('need_media')
+                          <p class="text-danger">{{$message}}</p>
+                        @enderror
+                      </div>
+                 <input type="submit" value="Save" class="btn btn-success">
+                </div>
+               </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-success">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
 <div>
     <div id="calendar-container" wire:ignore>
         <div id="events">
